@@ -58,3 +58,28 @@ public:
         
     }
 };
+#method 2
+#code-
+    class Solution {
+public:
+    bool isPalindrome(string s) {
+        string a="";
+        for(auto it:s){
+           if(isalnum(it))
+            a+=tolower(it);
+        }
+        string b=a;
+        reverse(a.begin(),a.end());
+        int i=0,j=0;
+        while(i<b.size()&&j<a.size()){
+            if(b[i]!=a[j]){
+                return false;
+            }
+            else{
+                i++;
+                j++;
+            }
+        }
+        return true;
+    }
+};
